@@ -23,7 +23,6 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="figuras.h" />
     <ClInclude Include="juego.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

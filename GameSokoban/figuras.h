@@ -10,8 +10,4 @@ CircleShape Circulo(float radio, float x, float y) {
 	circulo.setPosition(x, y);
 	return circulo;
 }
-RectangleShape Rectangulo(float alto, float ancho, float x, float y) {
-	RectangleShape rectangulo(Vector2f(alto, ancho));
-	rectangulo.setPosition(x, y);
-	return rectangulo;
-}
+
