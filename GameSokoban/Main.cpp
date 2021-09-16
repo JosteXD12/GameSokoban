@@ -1,14 +1,14 @@
 #include "SFML/Graphics.hpp"
 #include "iostream"
 #include "figuras.h"
-#include "juego.h"
+#include "Nivel1.h"
 
 using namespace sf;
 using namespace std;
 int main() 
 {
-	juego* partida;
-	partida = new juego(800, 600, " Inicio ");
+	Nivel1* partida;
+	partida = new Nivel1(800, 600, " Inicio ");
 }
 //bool GameOver = false;
 	//RenderWindow* ventanaInicio;

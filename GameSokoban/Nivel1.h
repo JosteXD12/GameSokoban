@@ -5,10 +5,10 @@
 using namespace sf;
 using namespace std;
 
-class juego 
+class Nivel1
 {
 public:
-	juego (int resolX, int ResolY, string titulo);
+	Nivel1(int resolX, int ResolY, string titulo);
 	void gameLoop();
 	void Dibujar();
 	void Eventos();
@@ -19,13 +19,12 @@ public:
 		rectangulo.setPosition(x, y);
 		return rectangulo;
 	}
-	//~juego ();
+	~Nivel1 ();
 
 private:
-	RenderWindow *VentanaInicio;
-	Texture *textura1;
-	Sprite*sprite1;
-	Event *evento;
+	RenderWindow* VentanaInicio;
+	Texture* textura1;
+	Sprite* sprite1;
+	Event* evento;
 	RectangleShape muro1;
 };
-

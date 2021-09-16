@@ -1,9 +1,9 @@
-#include "juego.h"
+#include "Nivel1.h"
 
-juego::juego(int resolX, int resolY, string titulo) 
+Nivel1::Nivel1(int resolX, int resolY, string titulo)
 {
 
-	VentanaInicio = new RenderWindow(VideoMode(resolX, resolY),titulo);
+	VentanaInicio = new RenderWindow(VideoMode(resolX, resolY), titulo);
 	VentanaInicio->setFramerateLimit(120);
 
 	textura1 = new Texture;
@@ -16,15 +16,15 @@ juego::juego(int resolX, int resolY, string titulo)
 	gameLoop();
 }
 
-void juego::gameLoop() {
-	while (VentanaInicio->isOpen()) 
+void Nivel1::gameLoop() {
+	while (VentanaInicio->isOpen())
 	{
 		Dibujar();
 		Eventos();
 	}
 }
 
-void juego::Dibujar()
+void Nivel1::Dibujar()
 {
 	VentanaInicio->clear();
 	VentanaInicio->draw(*sprite1);
@@ -32,7 +32,7 @@ void juego::Dibujar()
 	VentanaInicio->display();
 }
 
-void juego::Eventos() {
+void Nivel1::Eventos() {
 	while (VentanaInicio->pollEvent(*evento)) {
 		switch (evento->type)
 		{
@@ -47,7 +47,7 @@ void juego::Eventos() {
 					sprite1->setPosition(sprite1->getPosition().x + 16, sprite1->getPosition().y);
 				}
 				if (Coliciones() == true) {
-					sprite1->setPosition(sprite1->getPosition().x-16, sprite1->getPosition().y);
+					sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
 				}
 			}
 			//izquierda
@@ -56,7 +56,7 @@ void juego::Eventos() {
 					sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
 				}
 				if (Coliciones() == true) {
-					sprite1->setPosition(sprite1->getPosition().x+16, sprite1->getPosition().y);
+					sprite1->setPosition(sprite1->getPosition().x + 16, sprite1->getPosition().y);
 				}
 			}
 			//bjaar
@@ -65,7 +65,7 @@ void juego::Eventos() {
 					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
 				}
 				if (Coliciones() == true) {
-					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y-16);
+					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y - 16);
 				}
 			}
 			// subir
@@ -74,13 +74,13 @@ void juego::Eventos() {
 					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y - 16);
 				}
 				if (Coliciones() == true) {
-					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y+16);
+					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
 				}
 			}
 		}
 
 	}
 }
-bool juego::Coliciones() {
+bool Nivel1::Coliciones() {
 	if (sprite1->getGlobalBounds().intersects(muro1.getGlobalBounds())) { return true; } //colosion pj con rectangulo
 }
