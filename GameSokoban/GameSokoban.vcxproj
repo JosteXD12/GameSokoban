@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Nivel1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Nivel1.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

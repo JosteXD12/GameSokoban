@@ -1,27 +1,20 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "iostream"
-#include "Nivel1.h"
-
-using namespace sf;
+#include "Menu.h"
 using namespace std;
+using namespace sf;
 
 class Menu
 {
 public:
 	Menu(int resolX, int ResolY, string titulo);
-	void gameLoop();
+	void Gameloop();
 	void Dibujar();
-	void IniciarBotones();
 	void Eventos();
 
-	~Menu();
-
 private:
-	RenderWindow* MenuIncio;
-	RectangleShape* opcionesDeMenu[4]; 
-	Event* evento1;
-	
-
+	RenderWindow* MenuInicial;
+	Event* Evento;
 };
 

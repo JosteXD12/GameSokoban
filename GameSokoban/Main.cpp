@@ -7,14 +7,8 @@
 using namespace sf;
 using namespace std;
 
-int main() 
+int main()
 {
 	Nivel1* Incio;
 	Incio = new Nivel1(800, 600, " Menu ");
-
-
-
 }
-
-			
-
