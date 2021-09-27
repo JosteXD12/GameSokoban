@@ -1,6 +1,8 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "iostream"
+#include "Menu.h"
+#include "Main.cpp"
 
 using namespace sf;
 using namespace std;

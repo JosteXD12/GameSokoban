@@ -13,18 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\NewFilter1">
+      <UniqueIdentifier>{11b0a243-5716-4527-b94c-52430ac2e83a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\NewFilter1">
+      <UniqueIdentifier>{f8b6b049-43e0-4ce7-b0fc-4fa76d492a32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Archivos de origen\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="Nivel1.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\NewFilter1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Menu.h">
+      <Filter>Archivos de encabezado\NewFilter1</Filter>
+    </ClInclude>
     <ClInclude Include="Nivel1.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\NewFilter1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

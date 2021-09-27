@@ -75,7 +75,18 @@ void Nivel1::Eventos() {
 				}
 				if (Coliciones() == true) {
 					sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
+					inicio
 				}
+		
+			}
+		case Event::MouseButtonPressed:
+			if (Mouse::isButtonPressed(Mouse::Left)) {
+				if (Vector2f(Mouse::getPosition()) == (muro1.getPosition())) {
+					Menu* N1;
+					N1 = new Menu(800, 600, " Menu ");
+					cout << "AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH" << endl;
+				}
+
 			}
 		}
 
