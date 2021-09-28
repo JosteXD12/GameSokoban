@@ -14,6 +14,7 @@ public:
 	void DibujarNivel1();
 	void Eventos();
 	bool Colisiones();
+	bool ColisionMouse();
 	
 	RectangleShape setRectangulo(float alto, float ancho, float x, float y)
 	{ //crea un rectangulo
@@ -23,11 +24,11 @@ public:
 	}
 	~juego();
 private:
-	int pantallaActual=1;
+	int pantallaActual=0;
 	RenderWindow* pantalla;
 	Texture* textura1;
 	Sprite* sprite1;
 	Event* evento;
-	RectangleShape muro[10];
+	RectangleShape muro[10]; // Son los rectangulos que usaremos
 };
 

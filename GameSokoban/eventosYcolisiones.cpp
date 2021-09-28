@@ -46,11 +46,24 @@ void juego::Eventos() {
                 }
 
             }
-
+        case Event::MouseButtonPressed:
+            if (ColisionMouse() == true) {
+                pantallaActual = 1;
+            }
         }
+
 
     }
 }
 bool juego::Colisiones() {
     if (sprite1->getGlobalBounds().intersects(muro[0].getGlobalBounds())) { return true; } //colosion pj con rectangulo 
+}
+
+bool juego::ColisionMouse() {
+    FloatRect hitboxMouse=Rect<float>::Rect(Mouse::getPosition(*pantalla).x, Mouse::getPosition(*pantalla).y,1,1);
+    // En lugar de muro[0], agrega un nuevo muro en menu para el boton y lo pones aqui.
+    if (muro[0].getGlobalBounds().intersects(hitboxMouse)) {
+        return true;
+   }
+
 }
