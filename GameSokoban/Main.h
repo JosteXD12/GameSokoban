@@ -14,11 +14,11 @@ public:
 	void DibujarNivel1();
 	void Eventos();
 	bool Colisiones();
-	bool ColisionMouse();
+	int ColisionMouse();
 	
-	RectangleShape setRectangulo(float alto, float ancho, float x, float y)
+	RectangleShape setRectangulo(float ancho, float alto, float x, float y)
 	{ //crea un rectangulo
-		RectangleShape rectangulo(Vector2f(alto, ancho));
+		RectangleShape rectangulo(Vector2f(ancho, alto));
 		rectangulo.setPosition(x, y);
 		return rectangulo;
 	}
@@ -30,5 +30,6 @@ private:
 	Sprite* sprite1;
 	Event* evento;
 	RectangleShape muro[10]; // Son los rectangulos que usaremos
+	RectangleShape boton[5];
 };
 

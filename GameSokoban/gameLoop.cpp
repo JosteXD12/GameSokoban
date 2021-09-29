@@ -3,8 +3,11 @@ juego::juego(int resolX, int resolY, string titulo)
 {
     pantalla = new RenderWindow(VideoMode(resolX, resolY), titulo);
     pantalla->setFramerateLimit(120);
-    objetosPantalla();
     evento = new Event;
+    textura1 = new Texture;
+    sprite1 = new Sprite;
+
+    objetosPantalla();
     Gameloop();
 }
 
