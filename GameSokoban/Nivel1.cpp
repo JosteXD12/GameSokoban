@@ -11,6 +11,8 @@ void juego::DibujarNivel1()
     pantalla->draw(muro[2]); // el muro de izquierda
     pantalla->draw(muro[3]); // el muro de derecha
 
+    pantalla->draw(muro[4]); // Caja
+
     pantalla->draw(boton[2]);
     pantalla->display();
 }

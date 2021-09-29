@@ -14,6 +14,8 @@ public:
 	void DibujarNivel1();
 	void Eventos();
 	bool Colisiones();
+	bool ColisionesCajaJugador();
+	bool ColisionesCajaPared();
 	int ColisionMouse();
 	
 	RectangleShape setRectangulo(float ancho, float alto, float x, float y)
