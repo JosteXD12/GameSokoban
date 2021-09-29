@@ -66,7 +66,9 @@ bool juego::Colisiones() {
 }
 
 int juego::ColisionMouse() {
-    FloatRect hitboxMouse=Rect<float>::Rect(Mouse::getPosition(*pantalla).x, Mouse::getPosition(*pantalla).y,1,1);
+    Vector2i posicionMouse = Mouse::getPosition(*pantalla);
+    posicionMouse = (Vector2i)pantalla->mapPixelToCoords(posicionMouse);
+    FloatRect hitboxMouse=Rect<float>::Rect(posicionMouse.x, posicionMouse.y,1,1);
     // En lugar de muro[0], agrega un nuevo muro en menu para el boton y lo pones aqui.
     if (boton[0].getGlobalBounds().intersects(hitboxMouse)) {
         return 1;  // te envia al nivel 1
