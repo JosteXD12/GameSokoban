@@ -9,7 +9,9 @@ void juego::Eventos() {
             break;
         case Event::KeyPressed:
             //derecha 
-            if (evento->key.code == Keyboard().D || evento->key.code == Keyboard().Right) {
+            if ( evento->key.code == Keyboard::Right) {
+                if (derecha == 1) { derecha = 2; }
+                else if (derecha == 2) { derecha = 1; }
                 if (Colisiones() != true&& Colisiones() != true && ColisionesCajaPared() != true) {
                     sprite1->setPosition(sprite1->getPosition().x + 16, sprite1->getPosition().y);
                 }
@@ -23,9 +25,29 @@ void juego::Eventos() {
                 if (ColisionesCajaPared() == true) {
                     muro[4].setPosition(muro[4].getPosition().x - 16, muro[4].getPosition().y);
                 }
+                if (derecha == 1) {
+                    textura[1].loadFromFile("Imagenes/pj_64_d.png");
+                    sprite1->setTexture(textura[1]);
+                }
+                if (derecha == 2) {
+                    textura[1].loadFromFile("Imagenes/pj_64_d_2.png");
+                    sprite1->setTexture(textura[1]);
+                }
             }
             //izquierda 
-            if (evento->key.code == Keyboard().A || evento->key.code == Keyboard().Left) {
+            if (evento->key.code == Keyboard::Left) {
+                if (izquierda == 1) { izquierda = 2; }
+                else if (izquierda == 2) { izquierda = 1; }
+
+                if (izquierda == 1) {
+                    textura[2].loadFromFile("Imagenes/pj_64_i.png");
+                    sprite1->setTexture(textura[2]);
+                }
+                if (izquierda == 2) {
+                    textura[2].loadFromFile("Imagenes/pj_64_i_2.png");
+                    sprite1->setTexture(textura[2]);
+                }
+
                 if (Colisiones() != true&& Colisiones() != true && ColisionesCajaPared() != true) {
                     sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
                 }
@@ -41,7 +63,20 @@ void juego::Eventos() {
                 }
             }
             //bjaar 
-            if (evento->key.code == Keyboard().S || evento->key.code == Keyboard().Down) {
+            if ( evento->key.code == Keyboard::Down) {
+                if (abajo == 1) { abajo = 2; }
+                else if (abajo == 2) { abajo = 1; }
+
+                if (abajo == 1) {
+                    textura[3].loadFromFile("Imagenes/pj_64.png");
+                    sprite1->setTexture(textura[3]);
+                }
+                if (abajo == 2) {
+                    textura[3].loadFromFile("Imagenes/pj_64_2.png");
+                    sprite1->setTexture(textura[3]);
+                }
+
+                //======= Zona del movimiento =================
                 if (Colisiones() != true&&Colisiones() != true && ColisionesCajaPared() != true) {
                     sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
                     
@@ -58,7 +93,21 @@ void juego::Eventos() {
                 }
             }
             // subir 
-            if (evento->key.code == Keyboard().W || evento->key.code == Keyboard().Up) {
+            if ( evento->key.code == Keyboard::Up) {
+                // ======= Zona del sprite ============
+                if (arriba == 1) { arriba = 2; }
+                else if (arriba == 2) { arriba = 1; }
+
+                if (arriba == 1) {
+                    textura[4].loadFromFile("Imagenes/pj_64_e_2.png");
+                    sprite1->setTexture(textura[4]);
+                }
+                if (arriba == 2) {
+                    textura[4].loadFromFile("Imagenes/pj_64_e.png");
+                    sprite1->setTexture(textura[4]);
+                }    
+                
+                // ======= Zona del movimiento  =========
                 if (Colisiones() != true&&ColisionesCajaPared()!=true) {
                     sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y - 16);
                 }
@@ -73,13 +122,18 @@ void juego::Eventos() {
                     muro[4].setPosition(muro[4].getPosition().x, muro[4].getPosition().y+16);
                 }
 
+
             }
         case Event::MouseButtonPressed:
-            if (ColisionMouse() == 1) {
-                pantallaActual = 1;
-            }
-            if (ColisionMouse() == 2) {
-                pantallaActual = 0;
+            if (evento->mouseButton.button == Mouse::Left) {
+                if (ColisionMouse() == 1) {
+                    objetosNivel1();
+                    pantallaActual = 1;
+                }
+                if (ColisionMouse() == 2) {
+                    pantallaActual = 0;
+
+                }
             }
         }
 

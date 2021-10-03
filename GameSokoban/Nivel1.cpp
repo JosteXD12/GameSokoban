@@ -4,8 +4,8 @@
 void juego::DibujarNivel1()
 {
     pantalla->clear();
+    pantalla->draw(fondo[1]);
     pantalla->draw(*sprite1);
-
     pantalla->draw(muro[0]); // el muro de abajo
     pantalla->draw(muro[1]); // el muro de arriba
     pantalla->draw(muro[2]); // el muro de izquierda

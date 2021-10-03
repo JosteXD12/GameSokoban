@@ -8,7 +8,8 @@ class juego
 {
 public:
 	juego(int resolX, int ResolY, string titulo);
-	void objetosPantalla();
+	void objetosMenu();
+	void objetosNivel1();
 	void Gameloop();
 	void DibujarMenu();
 	void DibujarNivel1();
@@ -17,6 +18,8 @@ public:
 	bool ColisionesCajaJugador();
 	bool ColisionesCajaPared();
 	int ColisionMouse();
+	void guardarJuego();
+	void cargarJuego();
 	
 	RectangleShape setRectangulo(float ancho, float alto, float x, float y)
 	{ //crea un rectangulo
@@ -26,12 +29,15 @@ public:
 	}
 	~juego();
 private:
+	int izquierda = 1, derecha = 1, arriba = 1, abajo = 1;  //Para que el sprite de la sensacion de movimiento
 	int pantallaActual=0;
 	RenderWindow* pantalla;
-	Texture* textura1;
+	Texture textura[6]; // del 0 al 4 guarda las texturas del personaje
+						// 5 es el background
 	Sprite* sprite1;
 	Event* evento;
 	RectangleShape muro[10]; // Son los rectangulos que usaremos
 	RectangleShape boton[5];
+	Sprite fondo[2];
 };
 
