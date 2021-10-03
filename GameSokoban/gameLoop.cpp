@@ -4,7 +4,9 @@ juego::juego(int resolX, int resolY, string titulo)
     pantalla = new RenderWindow(VideoMode(resolX, resolY), titulo);
     evento = new Event;
     sprite1 = new Sprite;
-
+    for (int i = 0; i < 10; i++) {
+        textura[i] = new Texture;
+    }
     objetosMenu();
     objetosNivel1();
     Gameloop();

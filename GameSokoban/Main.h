@@ -32,12 +32,17 @@ private:
 	int izquierda = 1, derecha = 1, arriba = 1, abajo = 1;  //Para que el sprite de la sensacion de movimiento
 	int pantallaActual=0;
 	RenderWindow* pantalla;
-	Texture textura[6]; // del 0 al 4 guarda las texturas del personaje
-						// 5 es el background
+	Texture *textura[10]; // del 0 al 4 guarda las texturas del personaje
+						  // 5 es el background
+						  // 6 muros horizontales
+					      // 7 meta
+					      // 8 muros verticales
+	                      // 9 menu
 	Sprite* sprite1;
 	Event* evento;
 	RectangleShape muro[10]; // Son los rectangulos que usaremos
 	RectangleShape boton[5];
-	Sprite fondo[2];
+	RectangleShape meta;
+	Sprite fondo[2]; // 0 menu, 1 nivel1
 };
 

@@ -26,12 +26,12 @@ void juego::Eventos() {
                     muro[4].setPosition(muro[4].getPosition().x - 16, muro[4].getPosition().y);
                 }
                 if (derecha == 1) {
-                    textura[1].loadFromFile("Imagenes/pj_64_d.png");
-                    sprite1->setTexture(textura[1]);
+                    textura[1]->loadFromFile("Imagenes/pj_64_d.png");
+                    sprite1->setTexture(*textura[1]);
                 }
                 if (derecha == 2) {
-                    textura[1].loadFromFile("Imagenes/pj_64_d_2.png");
-                    sprite1->setTexture(textura[1]);
+                    textura[1]->loadFromFile("Imagenes/pj_64_d_2.png");
+                    sprite1->setTexture(*textura[1]);
                 }
             }
             //izquierda 
@@ -40,12 +40,12 @@ void juego::Eventos() {
                 else if (izquierda == 2) { izquierda = 1; }
 
                 if (izquierda == 1) {
-                    textura[2].loadFromFile("Imagenes/pj_64_i.png");
-                    sprite1->setTexture(textura[2]);
+                    textura[2]->loadFromFile("Imagenes/pj_64_i.png");
+                    sprite1->setTexture(*textura[2]);
                 }
                 if (izquierda == 2) {
-                    textura[2].loadFromFile("Imagenes/pj_64_i_2.png");
-                    sprite1->setTexture(textura[2]);
+                    textura[2]->loadFromFile("Imagenes/pj_64_i_2.png");
+                    sprite1->setTexture(*textura[2]);
                 }
 
                 if (Colisiones() != true&& Colisiones() != true && ColisionesCajaPared() != true) {
@@ -68,12 +68,12 @@ void juego::Eventos() {
                 else if (abajo == 2) { abajo = 1; }
 
                 if (abajo == 1) {
-                    textura[3].loadFromFile("Imagenes/pj_64.png");
-                    sprite1->setTexture(textura[3]);
+                    textura[3]->loadFromFile("Imagenes/pj_64.png");
+                    sprite1->setTexture(*textura[3]);
                 }
                 if (abajo == 2) {
-                    textura[3].loadFromFile("Imagenes/pj_64_2.png");
-                    sprite1->setTexture(textura[3]);
+                    textura[3]->loadFromFile("Imagenes/pj_64_2.png");
+                    sprite1->setTexture(*textura[3]);
                 }
 
                 //======= Zona del movimiento =================
@@ -99,12 +99,12 @@ void juego::Eventos() {
                 else if (arriba == 2) { arriba = 1; }
 
                 if (arriba == 1) {
-                    textura[4].loadFromFile("Imagenes/pj_64_e_2.png");
-                    sprite1->setTexture(textura[4]);
+                    textura[4]->loadFromFile("Imagenes/pj_64_e_2.png");
+                    sprite1->setTexture(*textura[4]);
                 }
                 if (arriba == 2) {
-                    textura[4].loadFromFile("Imagenes/pj_64_e.png");
-                    sprite1->setTexture(textura[4]);
+                    textura[4]->loadFromFile("Imagenes/pj_64_e.png");
+                    sprite1->setTexture(*textura[4]);
                 }    
                 
                 // ======= Zona del movimiento  =========
