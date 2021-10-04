@@ -18,7 +18,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Nivel1.cpp">
+    <ClCompile Include="dibujarNiveles.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="gameLoop.cpp">

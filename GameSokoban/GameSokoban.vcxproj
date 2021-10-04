@@ -24,7 +24,7 @@
     <ClCompile Include="gameLoop.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Nivel1.cpp" />
+    <ClCompile Include="dibujarNiveles.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
