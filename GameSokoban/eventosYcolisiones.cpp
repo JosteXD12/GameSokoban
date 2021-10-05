@@ -134,6 +134,7 @@ void juego::Eventos() {
                     pantallaActual = 1;
                 }
                 if (ColisionMouse() == 2) {
+                    vaciarCola();
                     pantallaActual = 0;
 
                 }
@@ -154,6 +155,10 @@ bool juego::Colisiones() {
     if (sprite1->getGlobalBounds().intersects(muro[6].getGlobalBounds())) { return true; }
     if (sprite1->getGlobalBounds().intersects(muro[7].getGlobalBounds())) { return true; }
     if (sprite1->getGlobalBounds().intersects(muro[8].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[9].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
     if(sprite1->getGlobalBounds().intersects(meta.getGlobalBounds())) { return true; }
 }
 bool juego::ColisionesCajaJugador() {
@@ -169,6 +174,10 @@ bool juego::ColisionesCajaPared() {
     if (caja[0].getGlobalBounds().intersects(muro[6].getGlobalBounds())) { return true; }
     if (caja[0].getGlobalBounds().intersects(muro[7].getGlobalBounds())) { return true; }
     if (caja[0].getGlobalBounds().intersects(muro[8].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[9].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
 }
 
 int juego::ColisionMouse() {
@@ -240,7 +249,7 @@ void juego::validarPuntos() {
 void juego::pasarNivel() {
     validarPuntos();
     if (pantallaActual == 1) {
-        if (contarPuntos.front() == 1) { vaciarCola(); objetosNivel1(); pantallaActual = 2; }
+        if (contarPuntos.front() == 1) { vaciarCola(); objetosNivel2(); pantallaActual = 2; }
     }
     if (pantallaActual == 2) {
         if (contarPuntos.front() == 1) { vaciarCola(); objetosNivel1(); pantallaActual = 3; }

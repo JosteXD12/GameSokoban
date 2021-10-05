@@ -12,6 +12,8 @@ public:
 	juego(int resolX, int ResolY, string titulo);
 	void objetosMenu();
 	void objetosNivel1();
+	void objetosNivel2();
+
 	void Gameloop();
 	void DibujarMenu();
 	void DibujarNivel1();
@@ -36,6 +38,7 @@ public:
 			contarPuntos.pop();
 			contarPuntos.push(0);
 		}
+		
 	}
 	void llenarCola(int);
 	
@@ -56,7 +59,7 @@ private:
 					      // 7 meta
 					      // 8 muros verticales
 	                      // 9 menu
-						  // 10 muros interiores
+						  // 10 al 12 muros interiores
 	Sprite* sprite1;
 	Event* evento;
 	RectangleShape muro[20]; // Son los rectangulos que usaremos

@@ -38,6 +38,11 @@ void juego::DibujarNivel2() {
     pantalla->draw(muro[6]); // muro interior
     pantalla->draw(muro[7]); // muro interior
     pantalla->draw(muro[8]); // muro interior
+    pantalla->draw(muro[9]); // muro interior
+    pantalla->draw(muro[10]); // muro interior
+    pantalla->draw(muro[11]); // muro interior
+    pantalla->draw(muro[12]); // muro interior
+
     pantalla->draw(caja[0]); // Caja
 
     pantalla->draw(boton[2]);
