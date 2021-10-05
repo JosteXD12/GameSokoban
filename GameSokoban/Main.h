@@ -13,15 +13,30 @@ public:
 	void objetosMenu();
 	void objetosNivel1();
 	void objetosNivel2();
+	void objetosNivel3();
+	void objetosNivel4();
+	void objetosNivel5();
 
 	void Gameloop();
 	void DibujarMenu();
+	void DibujarAcercaDe();
+	void DibujarAcercaDe2();
+
 	void DibujarNivel1();
 	void DibujarNivel2();
+	void DibujarNivel3();
+	void DibujarNivel4();
+	void DibujarNivel5();
+
 	void Eventos();
 	bool Colisiones();
 	bool ColisionesCajaJugador();
+	bool ColisionesCajaJugador2();
+	bool ColisionesCajaJugador3();
 	bool ColisionesCajaPared();
+	bool ColisionesCaja2Pared();
+	bool ColisionesCaja3Pared();
+
 	void ColisionCajasMeta();
 	int ColisionMouse();
 	void guardarJuego();
@@ -60,14 +75,17 @@ private:
 					      // 8 muros verticales
 	                      // 9 menu
 						  // 10 al 12 muros interiores
+					      // 13 y 14 fondo acerca de
 	Sprite* sprite1;
 	Event* evento;
 	RectangleShape muro[20]; // Son los rectangulos que usaremos
-	RectangleShape boton[5];
+	RectangleShape boton[8];
 	RectangleShape caja[3];
 	RectangleShape puntos[3];
 	RectangleShape meta;
-	Sprite fondo[2]; // 0 menu, 1 nivel1
+	Font* fuente;
+	Text *textoBtn[8];
+	Sprite fondo[4]; // 0 menu, 1 nivel1, 2 y 3 acerca de
 	queue<int> contarPuntos;
 };
 

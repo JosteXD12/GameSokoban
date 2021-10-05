@@ -18,13 +18,30 @@ void juego::Eventos() {
                 if (Colisiones() == true) {
                     sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
                 }
+
                 if (ColisionesCajaJugador() == true) {
                     sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
                     caja[0].setPosition(caja[0].getPosition().x + 16, caja[0].getPosition().y);
                     ColisionCajasMeta();
                 }
+                if (ColisionesCajaJugador2() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
+                    caja[1].setPosition(caja[1].getPosition().x + 16, caja[1].getPosition().y);
+                    ColisionCajasMeta();
+                }
+                if (ColisionesCajaJugador3() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
+                    caja[2].setPosition(caja[2].getPosition().x + 16, caja[2].getPosition().y);
+                    ColisionCajasMeta();
+                }
                 if (ColisionesCajaPared() == true) {
                     caja[0].setPosition(caja[0].getPosition().x - 16, caja[0].getPosition().y);
+                }
+                if (ColisionesCaja2Pared() == true) {
+                    caja[1].setPosition(caja[1].getPosition().x - 16, caja[1].getPosition().y);
+                }
+                if (ColisionesCaja3Pared() == true) {
+                    caja[2].setPosition(caja[2].getPosition().x - 16, caja[2].getPosition().y);
                 }
                 if (derecha == 1) {
                     textura[1]->loadFromFile("Imagenes/pj_64_d.png");
@@ -49,7 +66,7 @@ void juego::Eventos() {
                     sprite1->setTexture(*textura[2]);
                 }
 
-                if (Colisiones() != true&& Colisiones() != true && ColisionesCajaPared() != true) {
+                if (Colisiones() != true&& Colisiones() != true ) {
                     sprite1->setPosition(sprite1->getPosition().x - 16, sprite1->getPosition().y);
                 }
                 if (Colisiones() == true) {
@@ -60,8 +77,24 @@ void juego::Eventos() {
                     caja[0].setPosition(caja[0].getPosition().x - 16, caja[0].getPosition().y);
                     ColisionCajasMeta();
                 }
+                if (ColisionesCajaJugador2() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x + 16, sprite1->getPosition().y);
+                    caja[1].setPosition(caja[1].getPosition().x - 16, caja[1].getPosition().y);
+                    ColisionCajasMeta();
+                }
+                if (ColisionesCajaJugador3() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x + 16, sprite1->getPosition().y);
+                    caja[2].setPosition(caja[2].getPosition().x - 16, caja[2].getPosition().y);
+                    ColisionCajasMeta();
+                }
                 if (ColisionesCajaPared() == true) {
                     caja[0].setPosition(caja[0].getPosition().x + 16, caja[0].getPosition().y);
+                }
+                if (ColisionesCaja2Pared() == true) {
+                    caja[1].setPosition(caja[1].getPosition().x + 16, caja[1].getPosition().y);
+                }
+                if (ColisionesCaja3Pared() == true) {
+                    caja[2].setPosition(caja[2].getPosition().x + 16, caja[2].getPosition().y);
                 }
             }
             //bjaar 
@@ -91,8 +124,24 @@ void juego::Eventos() {
                     caja[0].setPosition(caja[0].getPosition().x, caja[0].getPosition().y+16);
                     ColisionCajasMeta();
                 }
-                if (ColisionesCajaPared() == true) {
+                if (ColisionesCajaJugador2() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y - 16);
+                    caja[1].setPosition(caja[1].getPosition().x, caja[1].getPosition().y + 16);
+                    ColisionCajasMeta();
+                }
+                if (ColisionesCajaJugador3() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y - 16);
+                    caja[2].setPosition(caja[2].getPosition().x, caja[2].getPosition().y + 16);
+                    ColisionCajasMeta();
+                }
+                if (ColisionesCajaPared() == 1) {
                     caja[0].setPosition(caja[0].getPosition().x, caja[0].getPosition().y-16);
+                }
+                if (ColisionesCaja2Pared() == true) {
+                    caja[1].setPosition(caja[1].getPosition().x, caja[1].getPosition().y - 16);
+                }
+                if (ColisionesCaja3Pared() == true) {
+                    caja[2].setPosition(caja[2].getPosition().x, caja[2].getPosition().y - 16);
                 }
             }
             // subir 
@@ -122,11 +171,28 @@ void juego::Eventos() {
                     caja[0].setPosition(caja[0].getPosition().x, caja[0].getPosition().y-16);
                     ColisionCajasMeta();
                 }
+                if (ColisionesCajaJugador2() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
+                    caja[1].setPosition(caja[1].getPosition().x, caja[1].getPosition().y - 16);
+                    ColisionCajasMeta();
+                }
+                if (ColisionesCajaJugador3() == true) {
+                    sprite1->setPosition(sprite1->getPosition().x, sprite1->getPosition().y + 16);
+                    caja[2].setPosition(caja[2].getPosition().x, caja[2].getPosition().y - 16);
+                    ColisionCajasMeta();
+                }
                 if (ColisionesCajaPared() == true) {
                     caja[0].setPosition(caja[0].getPosition().x, caja[0].getPosition().y+16);
                 }
+                if (ColisionesCaja2Pared() == true) {
+                    caja[1].setPosition(caja[1].getPosition().x, caja[1].getPosition().y + 16);
+                }
+                if (ColisionesCaja3Pared() == true) {
+                    caja[2].setPosition(caja[2].getPosition().x, caja[2].getPosition().y + 16);
+                }
                 
             }
+            
         case Event::MouseButtonPressed:
             if (evento->mouseButton.button == Mouse::Left) {
                 if (ColisionMouse() == 1) {
@@ -136,14 +202,30 @@ void juego::Eventos() {
                 if (ColisionMouse() == 2) {
                     vaciarCola();
                     pantallaActual = 0;
-
                 }
+                if (ColisionMouse() == 3) {
+                    vaciarCola();
+                    if (pantallaActual == 1) {objetosNivel1();};
+                    if (pantallaActual == 2) { objetosNivel2(); };
+                    if (pantallaActual == 3) { objetosNivel3(); };
+                    if (pantallaActual == 4) { objetosNivel4(); };
+                    if (pantallaActual == 5) { objetosNivel5(); };
+                }
+                if (ColisionMouse()==4) {
+                    pasarNivel();
+                }
+                if (ColisionMouse() == 5) {
+                    pantallaActual = 7;
+                }
+                if (ColisionMouse() == 6) {
+                    pantallaActual = 8;
+                }
+
             }
         }
 
-
+        validarPuntos();
     }
-    pasarNivel();
 }
 bool juego::Colisiones() {
     if (sprite1->getGlobalBounds().intersects(muro[0].getGlobalBounds())) { return true; } 
@@ -159,10 +241,18 @@ bool juego::Colisiones() {
     if (sprite1->getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
     if (sprite1->getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
     if (sprite1->getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[13].getGlobalBounds())) { return true; }
+    if (sprite1->getGlobalBounds().intersects(muro[14].getGlobalBounds())) { return true; }
     if(sprite1->getGlobalBounds().intersects(meta.getGlobalBounds())) { return true; }
 }
 bool juego::ColisionesCajaJugador() {
     if (sprite1->getGlobalBounds().intersects(caja[0].getGlobalBounds())) { return true; }
+}
+bool juego::ColisionesCajaJugador2() {
+    if (sprite1->getGlobalBounds().intersects(caja[1].getGlobalBounds())) { return true; }
+}
+bool juego::ColisionesCajaJugador3() {
+    if (sprite1->getGlobalBounds().intersects(caja[2].getGlobalBounds())) { return true; }
 }
 bool juego::ColisionesCajaPared() {
     if (caja[0].getGlobalBounds().intersects(muro[0].getGlobalBounds())) { return true; }
@@ -178,19 +268,79 @@ bool juego::ColisionesCajaPared() {
     if (caja[0].getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
     if (caja[0].getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
     if (caja[0].getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[13].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(muro[14].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(caja[1].getGlobalBounds())) { return true; }
+    if (caja[0].getGlobalBounds().intersects(caja[2].getGlobalBounds())) { return true; }
+
 }
+bool juego::ColisionesCaja2Pared() {
+
+    if (caja[1].getGlobalBounds().intersects(muro[0].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[1].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[2].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[3].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[4].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[5].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[6].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[7].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[8].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[9].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[13].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(muro[14].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(caja[0].getGlobalBounds())) { return true; }
+    if (caja[1].getGlobalBounds().intersects(caja[2].getGlobalBounds())) { return true; }
+}
+bool juego::ColisionesCaja3Pared() {
+    if (caja[2].getGlobalBounds().intersects(muro[0].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[1].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[2].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[3].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[4].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[5].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[6].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[7].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[8].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[9].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[10].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[11].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[12].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[13].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(muro[14].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(caja[1].getGlobalBounds())) { return true; }
+    if (caja[2].getGlobalBounds().intersects(caja[0].getGlobalBounds())) { return true; }
+}
+
 
 int juego::ColisionMouse() {
     Vector2i posicionMouse = Mouse::getPosition(*pantalla);
     posicionMouse = (Vector2i)pantalla->mapPixelToCoords(posicionMouse);
     FloatRect hitboxMouse=Rect<float>::Rect(posicionMouse.x, posicionMouse.y,1,1);
     // En lugar de muro[0], agrega un nuevo muro en menu para el boton y lo pones aqui.
-    if (boton[0].getGlobalBounds().intersects(hitboxMouse)) {
-        return 1;  // te envia al nivel 1
+    if (pantallaActual == 0) {
+        if (boton[0].getGlobalBounds().intersects(hitboxMouse)) {
+            return 1;  // te envia al nivel 1
+        }
+        if (boton[1].getGlobalBounds().intersects(hitboxMouse)) {
+            return 5;  // acerca de /info
+        }
     }
-
-    if (boton[2].getGlobalBounds().intersects(hitboxMouse)) {
-        return 2; // te envia al menu
+    if (pantallaActual != 0) {
+        if (boton[2].getGlobalBounds().intersects(hitboxMouse)) {
+            return 2; // te envia al menu
+        }
+        if (boton[3].getGlobalBounds().intersects(hitboxMouse)) {
+            return 3; //reinicia
+        }
+        if (boton[4].getGlobalBounds().intersects(hitboxMouse)) {
+            return 4; // avanza
+        }
+        if (boton[5].getGlobalBounds().intersects(hitboxMouse)) {
+            return 6; 
+        }
     }
 
 }
@@ -200,10 +350,10 @@ void juego::ColisionCajasMeta() {
             caja[0].setPosition(Vector2f(128,8));
         }
         if (contarPuntos.front() == 1) {
-            caja[0].setPosition(Vector2f(160, 8));
+            caja[0].setPosition(Vector2f(224, 8));
         }
         if (contarPuntos.front() == 2) {
-            caja[0].setPosition(Vector2f(192, 8));
+            caja[0].setPosition(Vector2f(320, 8));
         }
     }
     if (caja[1].getGlobalBounds().intersects(meta.getGlobalBounds())) {
@@ -211,10 +361,10 @@ void juego::ColisionCajasMeta() {
             caja[1].setPosition(Vector2f(128, 8));
         }
         if (contarPuntos.front() == 1) {
-            caja[1].setPosition(Vector2f(160, 8));
+            caja[1].setPosition(Vector2f(224, 8));
         }
         if (contarPuntos.front() == 2) {
-            caja[1].setPosition(Vector2f(192, 8));
+            caja[1].setPosition(Vector2f(320, 8));
         }
     }
     if (caja[2].getGlobalBounds().intersects(meta.getGlobalBounds())) {
@@ -222,10 +372,10 @@ void juego::ColisionCajasMeta() {
             caja[2].setPosition(Vector2f(128, 8));
         }
         if (contarPuntos.front() == 1) {
-            caja[2].setPosition(Vector2f(160, 8));
+            caja[2].setPosition(Vector2f(224, 8));
         }
         if (contarPuntos.front() == 2) {
-            caja[2].setPosition(Vector2f(192, 8));
+            caja[2].setPosition(Vector2f(320, 8));
         }
     }
 }
@@ -247,22 +397,19 @@ void juego::validarPuntos() {
     }
 }
 void juego::pasarNivel() {
-    validarPuntos();
     if (pantallaActual == 1) {
-        if (contarPuntos.front() == 1) { vaciarCola(); objetosNivel2(); pantallaActual = 2; }
+        if (contarPuntos.front() == 1) { vaciarCola(); pantallaActual = 2; objetosNivel2(); }
     }
     if (pantallaActual == 2) {
-        if (contarPuntos.front() == 1) { vaciarCola(); objetosNivel1(); pantallaActual = 3; }
+        if (contarPuntos.front() == 1) { vaciarCola(); pantallaActual = 3; objetosNivel3(); }
     }
     if (pantallaActual == 3) {
-        if (contarPuntos.front() == 2) { vaciarCola(); objetosNivel1(); pantallaActual = 4; }
+        if (contarPuntos.front() == 2) { vaciarCola(); pantallaActual = 4; objetosNivel4(); }
     }
     if (pantallaActual == 4) {
-        if (contarPuntos.front() == 2) { vaciarCola(); objetosNivel1(); pantallaActual = 5; }
+        if (contarPuntos.front() == 3) { vaciarCola(); pantallaActual = 5; objetosNivel5(); }
     }
-    if (pantallaActual == 5) {
-        if (contarPuntos.front() == 3) { vaciarCola(); objetosNivel1(); pantallaActual = 6; }
-    }
+    if (pantallaActual == 5) { vaciarCola(); }
 }
 void juego::llenarCola(int p) {
     contarPuntos.pop();
