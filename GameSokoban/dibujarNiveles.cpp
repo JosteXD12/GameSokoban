@@ -24,6 +24,9 @@ void juego::DibujarNivel1()
     pantalla->draw(*textoBtn[2]);
     pantalla->draw(*textoBtn[3]);
 
+    pantalla->draw(boton[6]);
+    pantalla->draw(*textoBtn[6]);
+
     if (contarPuntos.front() == 1) {
         pantalla->draw(boton[4]);
         pantalla->draw(*textoBtn[4]);
@@ -57,6 +60,8 @@ void juego::DibujarNivel2() {
     pantalla->draw(boton[3]);
     pantalla->draw(*textoBtn[2]);
     pantalla->draw(*textoBtn[3]);
+    pantalla->draw(boton[6]);
+    pantalla->draw(*textoBtn[6]);
     if (contarPuntos.front() == 1) {
         pantalla->draw(boton[4]);
         pantalla->draw(*textoBtn[4]);
@@ -93,6 +98,8 @@ void juego::DibujarNivel3() {
 
     pantalla->draw(*textoBtn[2]);
     pantalla->draw(*textoBtn[3]);
+    pantalla->draw(boton[6]);
+    pantalla->draw(*textoBtn[6]);
     if (contarPuntos.front() == 2) {
         pantalla->draw(boton[4]);
         pantalla->draw(*textoBtn[4]);
@@ -133,6 +140,8 @@ void juego::DibujarNivel4() {
     pantalla->draw(boton[3]);
     pantalla->draw(*textoBtn[2]);
     pantalla->draw(*textoBtn[3]);
+    pantalla->draw(boton[6]);
+    pantalla->draw(*textoBtn[6]);
     if (contarPuntos.front() == 3) {
         pantalla->draw(boton[4]);
         pantalla->draw(*textoBtn[4]);
@@ -173,9 +182,19 @@ void juego::DibujarNivel5() {
     pantalla->draw(boton[2]);
     pantalla->draw(*textoBtn[2]);
     pantalla->draw(*textoBtn[3]);
+    pantalla->draw(boton[6]);
+    pantalla->draw(*textoBtn[6]);
     if (contarPuntos.front() == 3) {
         pantalla->draw(boton[4]);
         pantalla->draw(*textoBtn[4]);
     }
+    pantalla->display();
+}
+
+void juego::DibujarFinal() {
+    pantalla->clear(Color::White);
+    pantalla->draw(fondo[4]);
+    pantalla->draw(boton[2]);
+    pantalla->draw(*textoBtn[2]);
     pantalla->display();
 }

@@ -5,7 +5,7 @@ juego::juego(int resolX, int resolY, string titulo)
     evento = new Event;
     sprite1 = new Sprite;
     fuente = new Font;
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 17; i++) {
         textura[i] = new Texture;
     }
     contarPuntos.push(0);
@@ -35,7 +35,7 @@ void juego::Gameloop() {
             DibujarNivel5();
         }
         if (pantallaActual == 6) {
-                                    // falta
+            DibujarFinal();                // falta
         }
         if (pantallaActual == 7) {
             DibujarAcercaDe();

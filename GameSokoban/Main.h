@@ -3,6 +3,7 @@
 #include "iostream"
 #include <stack>
 #include <queue>
+#include <fstream>
 using namespace std;
 using namespace sf;
 
@@ -27,6 +28,7 @@ public:
 	void DibujarNivel3();
 	void DibujarNivel4();
 	void DibujarNivel5();
+	void DibujarFinal();
 
 	void Eventos();
 	bool Colisiones();
@@ -56,6 +58,8 @@ public:
 		
 	}
 	void llenarCola(int);
+
+	void lectura();
 	
 	RectangleShape setRectangulo(float ancho, float alto, float x, float y)
 	{ //crea un rectangulo
@@ -68,7 +72,7 @@ private:
 	int izquierda = 1, derecha = 1, arriba = 1, abajo = 1;  //Para que el sprite de la sensacion de movimiento
 	int pantallaActual=0;
 	RenderWindow* pantalla;
-	Texture *textura[15]; // del 0 al 4 guarda las texturas del personaje
+	Texture *textura[17]; // del 0 al 4 guarda las texturas del personaje
 						  // 5 es el background
 						  // 6 muros horizontales
 					      // 7 meta
@@ -76,16 +80,22 @@ private:
 	                      // 9 menu
 						  // 10 al 12 muros interiores
 					      // 13 y 14 fondo acerca de
+						  // 15 cofre y 16 final
 	Sprite* sprite1;
 	Event* evento;
-	RectangleShape muro[20]; // Son los rectangulos que usaremos
+	RectangleShape muro[15]; // Son los rectangulos que usaremos
 	RectangleShape boton[8];
 	RectangleShape caja[3];
 	RectangleShape puntos[3];
 	RectangleShape meta;
 	Font* fuente;
 	Text *textoBtn[8];
-	Sprite fondo[4]; // 0 menu, 1 nivel1, 2 y 3 acerca de
+	Sprite fondo[5]; // 0 menu, 1 nivel1, 2 y 3 acerca de
 	queue<int> contarPuntos;
+	queue<int> coordenadas;
+	queue<string> objetos;
+	ofstream Esc;   
+	ifstream Lec, Lec2;
+	string o;
 };
 

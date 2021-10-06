@@ -20,6 +20,12 @@ void juego::objetosMenu() {
     textoBtn[5] = new Text("Acerca de", *fuente, 20);
     textoBtn[5]->setFillColor(Color(52, 91, 99));
 
+    textoBtn[6] = new Text("Guardar", *fuente, 24);
+    textoBtn[6]->setFillColor(Color(52, 91, 99));
+
+    textoBtn[7] = new Text("Cargar", *fuente, 24);
+    textoBtn[7]->setFillColor(Color(52, 91, 99));
+
     textura[9]->loadFromFile("Imagenes/menu.jpg");
     fondo[0].setTexture(*textura[9]);
     fondo[0].setPosition(Vector2f(0, 0));
@@ -37,6 +43,10 @@ void juego::objetosMenu() {
     textura[14]->loadFromFile("Imagenes/informacion.jpg");
     fondo[3].setTexture(*textura[14]);
     fondo[3].setPosition(Vector2f(0, 0));
+
+    textura[16]->loadFromFile("Imagenes/final.jpg");
+    fondo[4].setTexture(*textura[16]);
+    fondo[4].setPosition(Vector2f(0, 0));
 
     // =============== Muros Horizontales ====================
 
@@ -86,10 +96,24 @@ void juego::objetosMenu() {
     boton[5].setOutlineColor(Color(100, 175, 99));
     boton[5].setOutlineThickness(4);
 
+    boton[6] = setRectangulo(128, 32, 656, 8); // guardado
+    boton[6].setFillColor(Color(165, 225, 173));
+    boton[6].setOutlineColor(Color(100, 175, 99));
+    boton[6].setOutlineThickness(4);
+
+    boton[7] = setRectangulo(128, 32, 350, 450); 
+    boton[7].setFillColor(Color(165, 225, 173));
+    boton[7].setOutlineColor(Color(100, 175, 99));
+    boton[7].setOutlineThickness(4);
+
     // ========== puntos ======================
     puntos[0] = setRectangulo(64, 64, 128, 8);
     puntos[1] = setRectangulo(64, 64, 224, 8);
     puntos[2] = setRectangulo(64, 64, 320, 8);
+
+    puntos[0].setFillColor(Color::Transparent);
+    puntos[1].setFillColor(Color::Transparent);
+    puntos[2].setFillColor(Color::Transparent);
 
     //=========== textos ====================
     textoBtn[0]->setPosition(382,250);
@@ -98,6 +122,8 @@ void juego::objetosMenu() {
     textoBtn[3]->setPosition(240, 548);
     textoBtn[4]->setPosition(676, 548);
     textoBtn[5]->setPosition(548, 548);
+    textoBtn[6]->setPosition(672, 8);
+    textoBtn[7]->setPosition(374, 450);
 }
 
 
@@ -125,7 +151,10 @@ void juego::objetosNivel1() {
     muro[8].setTexture(textura[11]);
 
     // ============= Caja ==============================
+    textura[15]->loadFromFile("Imagenes/cofre.png");
     caja[0] = setRectangulo(64, 64, 160, 176); // La caja
+    caja[0].setTexture(textura[15]);
+
 
 
     // =========== Meta ======================
@@ -170,7 +199,9 @@ void juego::objetosNivel2() {
 
 
     // ============= Caja ==============================
+    textura[15]->loadFromFile("Imagenes/cofre.png");
     caja[0] = setRectangulo(64, 64, 160, 176); // La caja
+    caja[0].setTexture(textura[15]);
 
     // =========== Meta ======================
     meta = setRectangulo(64, 64, 688, 304);
@@ -216,7 +247,9 @@ void juego::objetosNivel3() {
     // ============= Caja ==============================
     caja[0] = setRectangulo(64, 64, 112, 176); // La caja
     caja[1] = setRectangulo(64, 64, 624, 368);
-
+    textura[15]->loadFromFile("Imagenes/cofre.png");
+    caja[0].setTexture(textura[15]);
+    caja[1].setTexture(textura[15]);
     // =========== Meta ======================
     meta = setRectangulo(64, 64, 320, 112);
 
@@ -266,6 +299,10 @@ void juego::objetosNivel4() {
     caja[0] = setRectangulo(64, 64, 432, 240); // La caja
     caja[1] = setRectangulo(64, 64, 624, 368);
     caja[2] = setRectangulo(64, 64, 112, 176);
+    textura[15]->loadFromFile("Imagenes/cofre.png");
+    caja[0].setTexture(textura[15]);
+    caja[1].setTexture(textura[15]);
+    caja[2].setTexture(textura[15]);
 
 
     // =========== Meta ======================
@@ -318,6 +355,10 @@ void juego::objetosNivel5() {
     caja[0] = setRectangulo(64, 64, 238, 176); // La caja
     caja[1] = setRectangulo(64, 64, 624, 368);
     caja[2] = setRectangulo(64, 64, 112, 368);
+    textura[15]->loadFromFile("Imagenes/cofre.png");
+    caja[0].setTexture(textura[15]);
+    caja[1].setTexture(textura[15]);
+    caja[2].setTexture(textura[15]);
 
 
     // =========== Meta ======================

@@ -220,7 +220,13 @@ void juego::Eventos() {
                 if (ColisionMouse() == 6) {
                     pantallaActual = 8;
                 }
-
+                if (ColisionMouse() == 7) {
+                    guardarJuego();
+                }
+                if (ColisionMouse() == 8) {
+                    lectura();
+                    cargarJuego();
+                }
             }
         }
 
@@ -327,6 +333,9 @@ int juego::ColisionMouse() {
         if (boton[1].getGlobalBounds().intersects(hitboxMouse)) {
             return 5;  // acerca de /info
         }
+        if (boton[7].getGlobalBounds().intersects(hitboxMouse)) {
+            return 8;
+        }
     }
     if (pantallaActual != 0) {
         if (boton[2].getGlobalBounds().intersects(hitboxMouse)) {
@@ -340,6 +349,9 @@ int juego::ColisionMouse() {
         }
         if (boton[5].getGlobalBounds().intersects(hitboxMouse)) {
             return 6; 
+        }
+        if (boton[6].getGlobalBounds().intersects(hitboxMouse)) {
+            return 7;
         }
     }
 
@@ -409,7 +421,9 @@ void juego::pasarNivel() {
     if (pantallaActual == 4) {
         if (contarPuntos.front() == 3) { vaciarCola(); pantallaActual = 5; objetosNivel5(); }
     }
-    if (pantallaActual == 5) { vaciarCola(); }
+    if (pantallaActual == 5) { 
+        if (contarPuntos.front() == 3) { vaciarCola(); pantallaActual = 6; }
+    }
 }
 void juego::llenarCola(int p) {
     contarPuntos.pop();
